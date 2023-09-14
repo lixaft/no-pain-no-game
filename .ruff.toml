@@ -1,0 +1,54 @@
+select = ["ALL"]
+ignore = [
+    "ANN",
+    "C901",
+    "D104",
+    "D105",
+    "D107",
+    "FBT",
+    "PLR0911",
+    "PLR0912",
+    "PLR0913",
+    "PLR0915",
+    "PT006",
+    "PTH",
+    "RUF005",
+    "S603",
+    "S607",
+    "SIM105",
+    "SIM117",
+    "TD002",
+    "TD003",
+    "UP001",
+    "UP004",
+    "UP008",
+    "UP010",
+    "UP032",
+]
+fixable = ["ALL"]
+unfixable = [
+    "COM812",
+    "ERA001",
+    "F401",
+    "F841",
+    "F842",
+]
+line-length = 79
+target-version = "py37"
+
+[per-file-ignores]
+"__init__.py" = ["F401", "N811"]
+"setup.py" = ["D", "I"]
+"tests/*" = ["ARG001", "D", "PLR2004", "S101"]
+
+[isort]
+force-single-line = true
+known-first-party = ["pipeutils", "tests"]
+required-imports = [
+    "from __future__ import absolute_import",
+    "from __future__ import division",
+    "from __future__ import print_function",
+]
+
+[pydocstyle]
+convention = "google"
